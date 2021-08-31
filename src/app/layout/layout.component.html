@@ -1,0 +1,6 @@
+<tv-splash-screen (closeSplashScreen)="showContentAfterSplashScreen($event);" [stopSplashScreen]="stopAnimationSplashScreen" *ngIf="!showPageContent"></tv-splash-screen>
+
+<main class="page" *ngIf="showPageContent">
+  <tv-header></tv-header>
+  <router-outlet></router-outlet>
+</main>

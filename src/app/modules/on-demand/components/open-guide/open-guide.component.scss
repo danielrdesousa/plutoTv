@@ -1,0 +1,18 @@
+.open-guide {
+  color: #000000;
+  right: 40px;
+  bottom: 40px;
+  display: flex;
+  padding: 10px;
+  z-index: 1;
+  position: fixed;
+  font-size: 16px;
+  background: #FFFFFF;
+  align-items: center;
+  font-weight: 500;
+  border-radius: 20px;
+  pointer-events: all;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}

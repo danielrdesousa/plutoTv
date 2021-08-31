@@ -1,0 +1,28 @@
+<div class="seasons">
+  <div class="seasons-select">
+    <select name="selectedSession" (change)="navigateTo($event)">
+      <option value="1">Temporada 1</option>
+      <option value="2">Temporada 2</option>
+      <option value="3">Temporada 3</option>
+    </select>
+    <i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.6133 16.0328L7.20074 9.72678C6.69117 9.00546 7.21158 8 8.08976 8L16.9149 8C17.7931 8 18.3027 8.99454 17.804 9.72678L13.3914 16.0328C12.9577 16.6557 12.047 16.6557 11.6133 16.0328Z"></path></svg></i>
+  </div>
+  <ul class="episodes">
+    <li *ngFor="let item of seasons;">
+      <a class="episode" href="javascript:void(0);">
+        <div class="episode__image">
+          <img width="231" height="130" src="https://api.pluto.tv/v3/images/episodes/6009e0e12a9738001343704f/screenshot16_9.jpg?auto=format&amp;ixlib=react-9.1.5&amp;h=130&amp;w=231" srcset="https://api.pluto.tv/v3/images/episodes/6009e0e12a9738001343704f/screenshot16_9.jpg?auto=format&amp;ixlib=react-9.1.5&amp;w=231&amp;h=130&amp;dpr=1&amp;q=75 1x,
+            https://api.pluto.tv/v3/images/episodes/6009e0e12a9738001343704f/screenshot16_9.jpg?auto=format&amp;ixlib=react-9.1.5&amp;w=231&amp;h=130&amp;dpr=2&amp;q=50 2x,
+            https://api.pluto.tv/v3/images/episodes/6009e0e12a9738001343704f/screenshot16_9.jpg?auto=format&amp;ixlib=react-9.1.5&amp;w=231&amp;h=130&amp;dpr=3&amp;q=35 3x,
+            https://api.pluto.tv/v3/images/episodes/6009e0e12a9738001343704f/screenshot16_9.jpg?auto=format&amp;ixlib=react-9.1.5&amp;w=231&amp;h=130&amp;dpr=4&amp;q=23 4x,
+            https://api.pluto.tv/v3/images/episodes/6009e0e12a9738001343704f/screenshot16_9.jpg?auto=format&amp;ixlib=react-9.1.5&amp;w=231&amp;h=130&amp;dpr=5&amp;q=20 5x" />
+        </div>
+        <div class="episode__details">
+          <h4>Piloto</h4>
+          <p>A primeira-família se prepara para o baile de posse quando eventos trágicos ameaçam tanto a família quanto a equipe da Casa Branca.</p>
+          <p>T1E1 50 min</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,44 @@
+.categories {
+  padding-bottom: 1rem;
+  position: relative;
+
+  &__list {
+    width: 18.75rem;
+  }
+
+  &__item {
+    flex: 1;
+    color: #A8A8A8;
+    padding: 0.5rem 1.25rem 0.4rem 1.25rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all .5s;
+
+    &:hover, &--active{
+      color: #ffffff;
+      background-color: #151515;
+    }
+
+    svg, img {
+      width: 1.375rem;
+      height: 1.375rem;
+      margin-right: 0.625rem;
+      filter: brightness(0) saturate(100%) invert(82%) sepia(0%) saturate(0%) hue-rotate(154deg) brightness(84%) contrast(84%);
+      transition: all .7s;
+    }
+
+    &--active {
+      svg, img {
+        filter: brightness(0) saturate(100%) invert(99%) sepia(99%) saturate(4286%) hue-rotate(328deg) brightness(101%) contrast(105%);
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

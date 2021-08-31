@@ -1,0 +1,95 @@
+.movies {
+  position: relative;
+
+  h3 {
+    font-family: "Pluto TV Sans", Verdana, sans-serif;
+    color: #A8A8A8;
+    font-size: 0.875rem;
+    line-height: 1.313rem;
+  }
+
+  &__control {
+    width: 2.625rem;
+    border: 0.125rem solid transparent;
+    height: 2.625rem;
+    background-color: #343434;
+    display: flex;
+    align-items: center;
+    border-radius: 2.625rem;
+    justify-content: center;
+    position: absolute;
+    cursor: pointer;
+
+    &--left {
+      left: 0.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--right {
+      right: 0.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      border-color: #FFDE2B;
+    }
+  }
+
+  &__containerList {
+    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+
+  &__list {
+    margin-top: 0.313rem;
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  &__movie {
+    display: flex;
+    box-sizing: border-box;
+    background-color: #151515;
+
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+
+    &--view-all {
+      min-width: 10rem;
+      background-color: #151515;
+
+      svg {
+        fill: #FFFFFF;
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+}
+
+.movie {
+  &__link {
+    min-width: 9rem;
+    min-height: 12.8rem;
+
+    flex: 1;
+    border: 0.125rem solid transparent;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover {
+      border-color: #FFDE2B;
+    }
+  }
+}
+
+@media only screen and (min-width: 2750px) {
+  .movies__control {
+    display: none;
+  }
+}

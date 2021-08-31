@@ -1,0 +1,68 @@
+.header {
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+  outline: none;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &__menu {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    & > svg {
+      fill: #A8A8A8;
+    }
+  }
+
+  &__logo {
+    margin-left: 1rem;
+  }
+
+  &__nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__search {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    & > svg {
+      fill: #A8A8A8;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  &__item {
+    color: #A8A8A8;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    &--active, &:hover {
+      color: #FFEB2B;
+    }
+  }
+}

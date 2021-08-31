@@ -1,0 +1,53 @@
+<tv-player-video *ngIf="!pictureInPicture"></tv-player-video>
+
+<div class="module-wrapper">
+  <aside class="sidebar">
+    <ng-container *ngIf="loadedCategories; else LoadingCategories">
+      <tv-categories [categories]="categories"></tv-categories>
+    </ng-container>
+  </aside>
+  <section class="content" (scroll)="markCategoryBasedScroll()">
+    <ng-container *ngIf="loadedItems; else LoadingMovies">
+      <tv-carousel-items [title]="items[0]?.category?.name" [items]="items" [id]="items[0]?.category?.id" *ngFor="let items of groupItems;"></tv-carousel-items>
+    </ng-container>
+  </section>
+</div>
+
+<ng-template #LoadingMovies>
+  <div class="loading-overlay"></div>
+  <div *ngFor="let item of generateFake(3)" style="margin-bottom: 0.313rem;">
+    <h3>
+      <ngx-skeleton-loader
+        animation="progress-dark"
+        [theme]="{'background-color':'#151515', 'width':'7rem', 'height':'0.875rem', 'line-height':'1.313rem', 'margin-bottom': '0.313rem'}">
+      </ngx-skeleton-loader>
+    </h3>
+    <ul style="display: flex; gap:0.7rem; overflow: hidden;">
+      <li *ngFor="let item of generateFake(99)">
+          <ngx-skeleton-loader
+            animation="progress-dark"
+            [theme]="{'background-color': '#151515', 'width': '9rem', height:'12.8rem', 'margin': '0'}"
+          >
+          </ngx-skeleton-loader>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
+<tv-picture-in-picture (exitPictureInPicture)="handlerPlayerVideo(!$event)" [showPictureInPicture]="pictureInPicture"></tv-picture-in-picture>
+<tv-open-guide (openGuide)="handlerPlayerVideo($event)"></tv-open-guide>
+
+<ng-template #LoadingCategories>
+  <div class="loading-overlay"></div>
+  <nav>
+    <ul style="width: 18.75rem;">
+      <li *ngFor="let item of generateFake(10)">
+        <ngx-skeleton-loader
+          animation="progress-dark"
+          [theme]="{'background-color': '#151515', height:'36.37px', 'border-radius':'1.5rem', 'margin-bottom': '1rem'}"
+        >
+        </ngx-skeleton-loader>
+      </li>
+    </ul>
+  </nav>
+</ng-template>

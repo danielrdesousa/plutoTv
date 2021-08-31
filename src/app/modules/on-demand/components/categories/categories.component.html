@@ -1,0 +1,8 @@
+<nav class="categories">
+  <ul class="categories__list">
+    <li class="categories__item" (click)="goTo(category)" [ngClass]="selectedId == category.id ? 'categories__item--active': ''" *ngFor="let category of categories; let i = index">
+      <img src="{{ category.iconSvg.path }}" alt="{{ category.name }}">
+      {{ category.name }}
+    </li>
+  </ul>
+</nav>

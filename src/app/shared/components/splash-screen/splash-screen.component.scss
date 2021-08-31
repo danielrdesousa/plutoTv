@@ -1,0 +1,203 @@
+.splash-screen {
+  position: absolute;
+  z-index: 2;
+  background: #000;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+}
+
+.splash-container {
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &__animation {
+    width: 100%;
+    margin-left: 10rem;
+    height: auto;
+    position: relative;
+    display: flex;
+    animation: center;
+    justify-content: flex-start;
+    opacity: 1;
+    transition: opacity 1s;
+    transition-delay: 1s;
+
+    &.animation {
+      opacity: 0;
+    }
+
+  }
+}
+
+.animation {
+  display: flex;
+  position: relative;
+
+  &__bars {
+    width: 100%;
+    height: 80px;
+    background: transparent;
+
+    .bars__progress {
+      height: 80px;
+      position: absolute;
+
+      &:nth-child(1) {
+        background: #ff6700;
+        &.animation {
+          animation-name: progressBar;
+          animation-duration: 0.5s;
+          animation-delay: 0.45s;
+        }
+      }
+      &:nth-child(2) {
+        background: #ffde2b;
+        &.animation {
+          animation-name: progressBar;
+          animation-duration: 0.5s;
+          animation-delay: 0.9s;
+        }
+      }
+      &:nth-child(3) {
+        background: #5e00ff;
+        &.animation {
+          animation-name: progressBar;
+          animation-duration: 0.5s;
+          animation-delay: 1.3s;
+        }
+      }
+      &:nth-child(4) {
+        background: #ff2cd2;
+        &.animation {
+          animation-name: progressBar;
+          animation-duration: 0.5s;
+          animation-delay: 1.5s;
+        }
+      }
+    }
+  }
+
+  &__circle {
+    height: 80px;
+    right: 50px;
+    position: absolute;
+
+    .circle__progress {
+      width: 80px;
+      height: 80px;
+      border-radius: 40px;
+      position: absolute;
+      right: -50px;
+
+      &:nth-child(1) {
+        z-index: 5;
+        background: #ffffff;
+        animation-name: toRight;
+        animation-duration: 0.8s;
+        animation-iteration-count: 1;
+        transition: all 0.5s;
+
+        &.animation {
+          right: -100px;
+        }
+      }
+      &:nth-child(2) {
+        z-index: 4;
+        opacity: 0;
+        background: #ff6700;
+        transition: all 0.5s;
+
+        &.animation {
+          opacity: 1;
+          right: -85px;
+        }
+      }
+      &:nth-child(3) {
+        z-index: 3;
+        opacity: 0;
+        background: #ffde2b;
+        transition: all 0.5s;
+
+        &.animation {
+          opacity: 1;
+          right: -70px;
+        }
+      }
+      &:nth-child(4) {
+        z-index: 2;
+        opacity: 0;
+        background: #5e00ff;
+        transition: all 0.5s;
+
+        &.animation {
+          opacity: 1;
+          right: -55px;
+        }
+      }
+      &:nth-child(5) {
+        z-index: 1;
+        opacity: 0;
+        background: #ff2cd2;
+        transition: right 0.5s;
+
+        &.animation {
+          opacity: 1;
+          right: -45px;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    opacity: 0;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 1s;
+
+    &.animation {
+      opacity: 1;
+      left: 52%;
+    }
+
+    svg {
+      height: 110px;
+    }
+  }
+
+}
+
+@keyframes progressBar {
+  0% {
+    width: 0;
+    margin-left: 0;
+    border-radius: 0 40px 40px 0px;
+  }
+  50% {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 0 40px 40px 0px;
+  }
+  100% {
+    width: 0;
+    border-radius: 40px 0px 0px 40px;
+    margin-left: 96%;
+  }
+}
+
+
+@keyframes toRight {
+  0% {
+    right: 200px;
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    right: -50px;
+  }
+}

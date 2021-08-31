@@ -1,0 +1,73 @@
+.seasons {
+  width: calc(100vw - 4.5rem);
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 2rem 0;
+}
+
+.seasons-select {
+  width: min-content;
+  margin-bottom: 1rem;
+  position: relative;
+
+  select {
+    color: #FFFFFF;
+    padding: 15px 45px 15px 15px;
+    min-width: 120px;
+    border: 1px solid #A8A8A8;
+    border-radius: 4px;
+    background-color: #2C2C2C;
+    -webkit-appearance: none;
+  }
+  i {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 7px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    pointer-events: none;
+
+    & > svg {
+      fill: #FFFFFF;
+    }
+  }
+}
+
+.episodes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  .episode {
+    display: flex;
+    text-decoration: none;
+
+    &:hover {
+      .episode__image {
+        box-shadow: 0 0 0 3px #ff6700;
+      }
+    }
+
+    &__image {
+      margin-right: 1rem;
+    }
+
+    &__details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+
+      h4 {
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 14px;
+        color: #A8A8A8;
+        line-height: normal;
+      }
+    }
+  }
+}

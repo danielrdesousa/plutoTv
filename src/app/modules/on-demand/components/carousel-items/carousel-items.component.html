@@ -1,0 +1,39 @@
+<div class="movies" id="{{ id }}">
+  <h3>{{ title }}</h3>
+
+  <div class="movies__containerList" #containerList>
+    <div class="movies__control movies__control--left" (click)="scrollLeft()" *ngIf="showControls.left">
+      <svg width="20" height="20" style="transform: rotate(180deg);" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.78101 3.80498C9.16486 3.40789 9.79794 3.39716 10.195 3.78101L17.695 11.031C17.8899 11.2194 18 11.4789 18 11.75C18 12.0211 17.8899 12.2806 17.695 12.469L10.195 19.719C9.79794 20.1028 9.16486 20.0921 8.78101 19.695C8.39716 19.2979 8.40789 18.6649 8.80498 18.281L15.5612 11.75L8.80498 5.21899C8.40789 4.83514 8.39716 4.20207 8.78101 3.80498Z" fill="white"></path></svg>
+    </div>
+
+    <ul class="movies__list" #itemsList>
+      <li class="movies__movie" *ngFor="let item of items">
+        <a class="movie__link" [routerLink]="mountRouterLink(item.slug, item.type)">
+          <ng-container *ngFor="let cover of item.covers">
+            <img *ngIf="cover.aspectRatio === '347:500'" [alt]="item?.name" loading="lazy" class="movie__poster"
+            src="{{ cover.url}}?auto=format&amp;ixlib=react-9.1.5&amp;h=200&amp;w=145"
+            srcset=
+              "{{ cover.url }}?auto=format&amp;ixlib=react-9.1.5&amp;w=145&amp;h=200&amp;dpr=1&amp;q=75 1x,
+              {{ cover.url }}?auto=format&amp;ixlib=react-9.1.5&amp;w=145&amp;h=200&amp;dpr=2&amp;q=50 2x,
+              {{ cover.url }}?auto=format&amp;ixlib=react-9.1.5&amp;w=145&amp;h=200&amp;dpr=3&amp;q=35 3x,
+              {{ cover.url }}?auto=format&amp;ixlib=react-9.1.5&amp;w=145&amp;h=200&amp;dpr=4&amp;q=23 4x,
+              {{ cover.url }}?auto=format&amp;ixlib=react-9.1.5&amp;w=145&amp;h=200&amp;dpr=5&amp;q=20 5x"/>
+          </ng-container>
+        </a>
+      </li>
+      <li class="movies__movie movies__movie--view-all" *ngIf="items.length > 12">
+        <a class="movie__link" href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17ZM9 12C9 10.34 10.34 9 12 9C13.66 9 15 10.34 15 12C15 13.66 13.66 15 12 15C10.34 15 9 13.66 9 12Z"></path></svg>
+          Ver Todos
+        </a>
+      </li>
+    </ul>
+
+    <div class="movies__control movies__control--right" (click)="scrollRight()" *ngIf="showControls.right">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.78101 3.80498C9.16486 3.40789 9.79794 3.39716 10.195 3.78101L17.695 11.031C17.8899 11.2194 18 11.4789 18 11.75C18 12.0211 17.8899 12.2806 17.695 12.469L10.195 19.719C9.79794 20.1028 9.16486 20.0921 8.78101 19.695C8.39716 19.2979 8.40789 18.6649 8.80498 18.281L15.5612 11.75L8.80498 5.21899C8.40789 4.83514 8.39716 4.20207 8.78101 3.80498Z" fill="white"></path></svg>
+    </div>
+  </div>
+
+
+</div>
+
